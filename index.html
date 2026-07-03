@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta de Compra · Dalton Costa Imóveis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="chevron-bg"></div>
+  <div class="hero-inner">
+    <div class="brandmark">
+      <svg class="chevlogo" viewBox="0 0 48 48" fill="none">
+        <path d="M6 34 L24 18 L42 34" stroke="#D9C6A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 26 L24 10 L42 26" stroke="#AD8A54" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">Dalton Costa Imóveis</div>
+        <div class="brand-sub">Proposta de compra</div>
+      </div>
+    </div>
+    <h1 class="title">Sua proposta, sem imprimir nada.</h1>
+    <p class="lede">Preencha os dados abaixo e envie direto pelo WhatsApp do corretor.</p>
+    <div class="hero-meta">
+      <div>Corretor responsável <strong id="corretorNome">—</strong></div>
+      <div>CRECI <strong>14712</strong></div>
+      <div>Local <strong>Recife – PE</strong></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <div class="rail" id="rail"></div>
+
+  <form id="proposalForm" novalidate>
+
+    <!-- 1. PROPONENTE -->
+    <section class="card" id="sec-proponente" data-title="Proponente">
+      <div class="card-head"><span class="num">01</span><h2>Dados do proponente</h2></div>
+      <p class="card-note">Quem está fazendo a proposta de compra.</p>
+
+      <div class="grid">
+        <div class="span-4"><label>Nome completo <span class="required">*</span></label><input required name="nome" placeholder="Nome como no documento"></div>
+
+        <div class="span-2"><label>Natural de</label><input name="natural_de" placeholder="Cidade / UF de nascimento"></div>
+        <div class="span-1"><label>Nacionalidade</label><input name="nacionalidade" placeholder="Brasileira"></div>
+        <div class="span-1"><label>Estado civil</label>
+          <select name="estado_civil"><option value="">Selecionar</option><option>Solteiro(a)</option><option>Casado(a)</option><option>Divorciado(a)</option><option>Viúvo(a)</option><option>União estável</option></select>
+        </div>
+
+        <div class="span-2"><label>CPF <span class="required">*</span></label><input required name="cpf" placeholder="000.000.000-00"></div>
+        <div class="span-1"><label>RG</label><input name="rg" placeholder="0000000"></div>
+        <div class="span-1"><label>Órgão exp.</label><input name="org_exp" placeholder="SSP/PE"></div>
+
+        <div class="span-2"><label>Data de nascimento</label><input type="date" name="nascimento"></div>
+        <div class="span-2"><label>Renda mensal</label><div class="money-wrap"><span>R$</span><input name="renda_mensal" inputmode="decimal" placeholder="0,00"></div></div>
+
+        <div class="span-2"><label>Profissão / ramo de negócio</label><input name="profissao" placeholder="Ex.: Engenheiro civil"></div>
+        <div class="span-2"><label>Empresa</label><input name="empresa" placeholder="Onde trabalha"></div>
+
+        <div class="span-4"><label>Endereço residencial</label><input name="end_residencial" placeholder="Rua, número, complemento"></div>
+        <div class="span-2"><label>Bairro</label><input name="bairro_res"></div>
+        <div class="span-1"><label>Cidade</label><input name="cidade_res" value="Recife"></div>
+        <div class="span-1"><label>UF / CEP</label><input name="cep_res" placeholder="PE, 00000-000"></div>
+
+        <div class="span-4"><label>Endereço comercial</label><input name="end_comercial" placeholder="Rua, número — se aplicável"></div>
+
+        <div class="span-2"><label>Celular / WhatsApp <span class="required">*</span></label><input required name="celular" placeholder="(81) 90000-0000"></div>
+        <div class="span-1"><label>Telefone residencial</label><input name="fone_res"></div>
+        <div class="span-1"><label>Telefone comercial</label><input name="fone_com"></div>
+
+        <div class="span-4"><label>E-mail</label><input type="email" name="email" placeholder="voce@email.com"></div>
+      </div>
+    </section>
+
+    <!-- 2. CÔNJUGE -->
+    <section class="card" id="sec-conjuge" data-title="Cônjuge">
+      <div class="card-head"><span class="num">02</span><h2>Cônjuge / companheiro(a)</h2></div>
+      <label class="toggle-row" for="temConjuge">
+        <input type="checkbox" id="temConjuge">
+        <span>A proposta inclui esposa(o) / companheiro(a) como coproponente</span>
+      </label>
+
+      <div class="conjuge-fields" id="conjugeFields">
+        <div class="grid">
+          <div class="span-4"><label>Nome completo</label><input name="c_nome" placeholder="Nome como no documento"></div>
+
+          <div class="span-2"><label>Natural de</label><input name="c_natural_de"></div>
+          <div class="span-1"><label>Nacionalidade</label><input name="c_nacionalidade" placeholder="Brasileira"></div>
+          <div class="span-1"><label>Estado civil</label>
+            <select name="c_estado_civil"><option value="">Selecionar</option><option>Solteiro(a)</option><option>Casado(a)</option><option>Divorciado(a)</option><option>Viúvo(a)</option><option>União estável</option></select>
+          </div>
+
+          <div class="span-2"><label>CPF</label><input name="c_cpf" placeholder="000.000.000-00"></div>
+          <div class="span-1"><label>RG</label><input name="c_rg"></div>
+          <div class="span-1"><label>Órgão exp.</label><input name="c_org_exp" placeholder="SSP/PE"></div>
+
+          <div class="span-2"><label>Data de nascimento</label><input type="date" name="c_nascimento"></div>
+          <div class="span-2"><label>Renda mensal</label><div class="money-wrap"><span>R$</span><input name="c_renda_mensal" inputmode="decimal" placeholder="0,00"></div></div>
+
+          <div class="span-2"><label>Profissão / ramo de negócio</label><input name="c_profissao"></div>
+          <div class="span-2"><label>Empresa</label><input name="c_empresa"></div>
+
+          <div class="span-4"><label>Endereço comercial</label><input name="c_end_comercial"></div>
+
+          <div class="span-2"><label>Celular / WhatsApp</label><input name="c_celular" placeholder="(81) 90000-0000"></div>
+          <div class="span-1"><label>Telefone residencial</label><input name="c_fone_res"></div>
+          <div class="span-1"><label>Telefone comercial</label><input name="c_fone_com"></div>
+
+          <div class="span-4"><label>E-mail</label><input type="email" name="c_email"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. IMÓVEL -->
+    <section class="card" id="sec-imovel" data-title="Imóvel">
+      <div class="card-head"><span class="num">03</span><h2>Imóvel de interesse</h2></div>
+      <div class="grid">
+        <div class="span-3"><label>Empreendimento / imóvel <span class="required">*</span></label><input required name="imovel_nome" placeholder="Nome do edifício ou imóvel"></div>
+        <div class="span-1"><label>Apartamento / unidade</label><input name="apartamento" placeholder="Nº"></div>
+        <div class="span-4"><label>Endereço</label><input name="imovel_endereco"></div>
+        <div class="span-2"><label>Bairro</label><input name="imovel_bairro"></div>
+        <div class="span-1"><label>Cidade</label><input name="imovel_cidade" value="Recife"></div>
+        <div class="span-1"><label>UF</label><input name="imovel_uf" value="PE"></div>
+      </div>
+    </section>
+
+    <!-- 4. PAGAMENTO -->
+    <section class="card" id="sec-pagamento" data-title="Pagamento">
+      <div class="card-head"><span class="num">04</span><h2>Condições de pagamento</h2></div>
+      <div class="grid">
+        <div class="span-2"><label>Valor do imóvel <span class="required">*</span></label><div class="money-wrap"><span>R$</span><input required name="valor_imovel" inputmode="decimal" placeholder="0,00"></div></div>
+        <div class="span-2"><label>Sinal / princípio de pagamento</label><div class="money-wrap"><span>R$</span><input name="sinal" inputmode="decimal" placeholder="0,00"></div></div>
+        <div class="span-2"><label>Financiamento (banco)</label><input name="financiamento_banco" placeholder="Ex.: Caixa, Itaú..."></div>
+        <div class="span-2"><label>Valor financiado</label><div class="money-wrap"><span>R$</span><input name="financiamento_valor" inputmode="decimal" placeholder="0,00"></div></div>
+        <div class="span-4"><label>Forma de pagamento (descreva as parcelas)</label><textarea name="forma_pagamento" placeholder="Ex.: Sinal de R$X na assinatura, saldo em Y parcelas de R$Z, restante via financiamento..."></textarea></div>
+        <div class="span-4"><label>Observações</label><textarea name="observacoes" placeholder="Qualquer condição especial da proposta"></textarea></div>
+      </div>
+    </section>
+
+    <!-- 5. DECLARAÇÃO -->
+    <section class="card" id="sec-declaracao" data-title="Declaração">
+      <div class="card-head"><span class="num">05</span><h2>Declaração e envio</h2></div>
+      <div class="grid">
+        <div class="span-2"><label>Local</label><input name="local" value="Recife"></div>
+        <div class="span-2"><label>Data</label><input type="date" name="data_proposta"></div>
+      </div>
+      <div class="declaracao">
+        Declaro, para os fins de direito, que as informações prestadas nesta proposta são verdadeiras, responsabilizando-me por sua exatidão.
+        <label><input type="checkbox" id="declaroCheck" required><span>Li e confirmo que as informações acima são verdadeiras.</span></label>
+      </div>
+
+      <div class="actions" style="margin-top:26px;">
+        <button type="button" class="btn-primary" id="btnWhatsapp">Enviar proposta via WhatsApp</button>
+        <button type="button" class="btn-secondary" id="btnPdf">Salvar / imprimir PDF</button>
+      </div>
+      <p class="hint">O envio por WhatsApp abre uma conversa com o corretor já com todos os dados formatados — nada fica salvo neste site.</p>
+      <div class="status-msg" id="statusMsg"></div>
+    </section>
+
+  </form>
+</div>
+
+<footer>
+  DALTON COSTA IMÓVEIS · Av. Cônsul Joseph Noujaim, 356, Pina – Recife/PE · (81) 99900-1008 · CRECI 14712
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
